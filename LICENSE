@@ -1,3 +1,33 @@
+package com.example.aivideogenerator
+
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val prompt = findViewById<EditText>(R.id.editPrompt)
+        val generate = findViewById<Button>(R.id.btnGenerate)
+
+        generate.setOnClickListener {
+            val text = prompt.text.toString()
+
+            if (text.isEmpty()) {
+                Toast.makeText(this, "Prompt लिखें", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Video Generate हो रहा है...", Toast.LENGTH_LONG).show()
+
+                // यहाँ AI Video API का कोड आएगा
+            }
+        }
+    }
+}
 Creative Commons Legal Code
 
 CC0 1.0 Universal
